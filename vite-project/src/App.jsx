@@ -1,15 +1,21 @@
-import './test_contextAPI/Counter/counter.css'
-import History from "./test_contextAPI/Counter/History"
-import Controls from "./test_contextAPI/Counter/Controls"
-import { CounterProvider } from "./test_contextAPI/Counter/CounterContext"
+import { useContext } from "react"
+import Dashboard from "./test_contextAPI/Auth/Dashboard"
+import LoginForm from "./test_contextAPI/Auth/LoginForm"
+import AuthContext from "./test_contextAPI/Auth/AuthContext"
+import { AuthProvider } from "./test_contextAPI/Auth/AuthContext"
+
+function AppContent () {
+  const {user} = useContext(AuthContext)
+  return user !== null ? <Dashboard/> : <LoginForm/>
+}
+
 
 function App() {
 
   return (
-    <CounterProvider>
-      <History/>
-      <Controls/>
-    </CounterProvider>
+    <AuthProvider>
+      <AppContent/>
+    </AuthProvider>
   )
 }
 
