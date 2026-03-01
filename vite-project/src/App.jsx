@@ -1,15 +1,27 @@
-import TaskList from "./test_contextAPI/Tasks/TaskList"
-import TaskInput from "./test_contextAPI/Tasks/TaskInput"
-import TasksProvider from "./test_contextAPI/Tasks/TasksContext"
+import CartProvider from "./cart_exercise/context/CartContext"
+import { useContext } from "react"
+import { CartContext } from "./cart_exercise/context/CartContext"
+import PayPage from "./cart_exercise/pages/PayPage"
+import CartPage from "./cart_exercise/pages/CartPage"
+import ProductList from './cart_exercise/pages/ProductList'
 
-
-function App() {
+function AppContent() {
+  const { currentPage } = useContext(CartContext)
 
   return (
-    <TasksProvider>
-      <TaskList/>
-      <TaskInput/>
-    </TasksProvider>
+    <>
+      {currentPage === 'shop' && <ProductList />}
+      {currentPage === 'cart' && <CartPage />}
+      {currentPage === 'pay' && <PayPage />}
+    </>
+  )
+}
+
+function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
   )
 }
 
