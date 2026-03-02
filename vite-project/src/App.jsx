@@ -1,8 +1,8 @@
-import UsersPosts from "./test_tanstack/users_posts/UsersPosts"
+import CreatePost from "./test_tanstack/post_system/CreatePost"
 
 function App() {
   return (
-    <UsersPosts/>
+    <CreatePost/>
   )
 }
 
