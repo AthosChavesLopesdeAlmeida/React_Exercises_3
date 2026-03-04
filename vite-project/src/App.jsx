@@ -1,8 +1,8 @@
-import CreatePost from "./test_tanstack/post_system/CreatePost"
+import Dashboard from "./dashboard_exercise/Dashboard"
 
 function App() {
   return (
-    <CreatePost/>
+    <Dashboard/>
   )
 }
 

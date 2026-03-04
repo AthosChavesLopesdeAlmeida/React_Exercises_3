@@ -1,3 +1,4 @@
+import './dashboard.css'
 import { useState } from "react"
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 
@@ -65,9 +66,9 @@ const Dashboard = () => {
 
   return (  
     <main>
-      <h1>Posts Dashboard</h1>
-      <header>
-        <select name="user_filter" id="user_filter" onChange={(e) => setSelectedUser(e.target.value)}>
+
+      <header className='page_header'>
+        <select name="user_filter" id="user_filter" onChange={(e) => setSelectedUser(e.target.value)} value={selectedUser}>
           <option value="">All</option>
           {usersResult.data.map((user) => {
             return (
@@ -77,26 +78,32 @@ const Dashboard = () => {
             )
           })}
         </select>
+        <h1>Posts Dashboard</h1>
         <button onClick={() => queryClient.invalidateQueries({queryKey: ['posts']})}>Refresh</button>
       </header>
-      <section>
-        {postsResult.data.map((post) => {
-          return (
-            <div key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-              <button onClick={() => setSelectedPost(post.id)}>Details</button>
-            </div>
-          )
-        })}
-      </section>
-      <section>
-        {renderDetails()}
-      </section>
-      <footer>
-        <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
-        <span>{currentPage}</span>
+
+      <article className='page_info'>
+        <section className='page_posts'>
+          {postsResult.data.map((post) => {
+            return (
+              <div key={post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+                <button onClick={() => setSelectedPost(post.id)}>Details</button>
+              </div>
+            )
+          })}
+        </section>
+
+        <section className='post_details'>
+          {renderDetails()}
+        </section>
+      </article>
+
+      <footer className='page_footer'>
         <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
+        <span>{currentPage}</span>
+        <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
       </footer>
     </main>
   )  
