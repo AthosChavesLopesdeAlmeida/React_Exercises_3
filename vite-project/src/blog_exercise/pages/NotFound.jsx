@@ -2,8 +2,8 @@ import React from 'react'
 
 const NotFound = () => {
   return (
-    <div>
-      <h3>404: Page not found </h3>
+    <div className='not-found'>
+      <h1>404: Page not found </h1>
     </div>
   )
 }

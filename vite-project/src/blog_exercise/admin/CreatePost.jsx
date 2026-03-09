@@ -9,7 +9,7 @@ const CreatePost = () => {
   }
 
   return (
-    <div>
+    <div className='form_container'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" />

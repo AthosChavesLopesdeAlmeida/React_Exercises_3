@@ -4,9 +4,9 @@ const AdminLayout = () => {
   
   return (
     <>
-      <nav>
-        <Link to='/admin/edit'>Edit Post</Link>
-        <Link to='/admin/create'>Create Post</Link>
+      <nav className='navbar_links'>
+        <Link to='/admin/edit' className='link'>Edit Post</Link>
+        <Link to='/admin/create' className='link'>Create Post</Link>
       </nav>
       <main>
         <Outlet/>
