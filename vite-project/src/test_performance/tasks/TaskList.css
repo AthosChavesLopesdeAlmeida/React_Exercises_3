@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: rgb(28, 28, 28);
+  --surface: rgb(38, 38, 38);
+  --surface-2: rgb(50, 50, 50);
+  --green: rgb(0, 180, 80);
+  --green-dark: rgb(0, 127, 0);
+  --green-dim: rgba(0, 180, 80, 0.1);
+  --text: rgb(230, 230, 230);
+  --text-muted: rgb(140, 140, 140);
+  --border: rgba(255, 255, 255, 0.07);
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Syne', sans-serif;
+}
+
+.tasklist_container {
+  max-width: 480px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 24px;
+}
+
+.tasklist_section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tasklist_title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tasklist_form {
+  display: flex;
+  gap: 8px;
+}
+
+.tasklist_input {
+  flex: 1;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.tasklist_input:focus {
+  border-color: var(--green);
+}
+
+.tasklist_btn {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tasklist_btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.tasklist_count {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Space Mono', monospace;
+  color: var(--text);
+  letter-spacing: -1px;
+}
+
+/* ── TASK ITEM ── */
+
+.taskitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.taskitem:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.taskitem_text {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.taskitem_btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+}
+
+.taskitem_btn:hover {
+  color: rgb(220, 80, 80);
+}

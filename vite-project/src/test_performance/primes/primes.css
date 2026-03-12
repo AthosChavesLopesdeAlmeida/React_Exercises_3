@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: rgb(28, 28, 28);
+  --surface: rgb(38, 38, 38);
+  --surface-2: rgb(50, 50, 50);
+  --green: rgb(0, 180, 80);
+  --green-dark: rgb(0, 127, 0);
+  --green-dim: rgba(0, 180, 80, 0.1);
+  --text: rgb(230, 230, 230);
+  --text-muted: rgb(140, 140, 140);
+  --border: rgba(255, 255, 255, 0.07);
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Syne', sans-serif;
+}
+
+.calculator_container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 480px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calculator_container h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+}
+
+.calculator_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.calculator_section label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.calculator_section input[type='number'] {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.calculator_section input[type='number']:focus {
+  border-color: var(--green);
+}
+
+.calculator_section p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+}
+
+.calculator_section button {
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 11px 24px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.calculator_section button:hover {
+  background-color: white;
+  color: var(--green-dark);
+}
