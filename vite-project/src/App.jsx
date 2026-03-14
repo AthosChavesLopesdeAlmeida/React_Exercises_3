@@ -1,7 +1,8 @@
-import FilteredItems from "./test_performance/filter_list/FilteredItems"
+import DataTable from "./data_table_exercise/DataTable"
+
 function App() {
   return (
-    <FilteredItems/>
+    <DataTable/>
   )
 }
 

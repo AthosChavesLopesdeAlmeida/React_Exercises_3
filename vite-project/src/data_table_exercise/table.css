@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: rgb(18, 18, 18);
+  --surface: rgb(26, 26, 26);
+  --surface-2: rgb(32, 32, 32);
+  --green: rgb(0, 180, 80);
+  --green-dim: rgba(0, 180, 80, 0.07);
+  --text: rgb(220, 220, 220);
+  --text-muted: rgb(100, 100, 100);
+  --border: rgba(255, 255, 255, 0.06);
+  --radius: 6px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+.table_wrapper {
+  max-width: 860px;
+  max-height: 620px;
+  overflow-y: auto;
+  margin: 48px auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.table_wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+.table_wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table_wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+}
+
+.data_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  table-layout: fixed;
+}
+
+/* ── COLUMN WIDTHS ── */
+
+.data_table th:nth-child(1),
+.data_table td:nth-child(1) { width: 70px; }
+
+.data_table th:nth-child(2),
+.data_table td:nth-child(2) { width: 130px; }
+
+.data_table th:nth-child(3),
+.data_table td:nth-child(3) { width: 70px; }
+
+.data_table th:nth-child(4),
+.data_table td:nth-child(4) { width: 130px; }
+
+.data_table th:nth-child(5),
+.data_table td:nth-child(5) { width: 120px; }
+
+.data_table th:nth-child(6),
+.data_table td:nth-child(6) { width: 100px; }
+
+/* ── HEADER ── */
+
+.data_table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.data_table thead tr:first-child th {
+  background-color: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data_table thead tr:first-child th:hover {
+  color: var(--text);
+}
+
+.data_table thead tr:last-child th {
+  background-color: var(--surface);
+  padding: 6px 10px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── FILTER INPUTS ── */
+
+.data_table thead input {
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s ease;
+}
+
+.data_table thead input::placeholder {
+  color: var(--text-muted);
+}
+
+.data_table thead input:focus {
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ── BODY ── */
+
+.data_table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table_row:last-child td {
+  border-bottom: none;
+}
+
+.table_row:hover td {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+.table_row.selected td {
+  background-color: var(--green-dim);
+  color: var(--text);
+}
+
+.table_row td:first-child {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.75rem;
+}
+
+/* ── STATUS BADGE ── */
+
+.status_badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.status_active {
+  background-color: rgba(0, 180, 80, 0.12);
+  color: rgb(0, 180, 80);
+}
+
+.status_inactive {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+.status_pending {
+  background-color: rgba(240, 160, 40, 0.12);
+  color: rgb(240, 160, 40);
+}
+
+/* ── BUTTON ── */
+
+.table_btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.table_btn:hover {
+  border-color: rgba(255,255,255,0.15);
+  color: var(--text);
+}
+
+.table_btn.selected {
+  border-color: var(--green);
+  color: var(--green);
+}

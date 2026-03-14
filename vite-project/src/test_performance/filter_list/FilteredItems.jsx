@@ -18,11 +18,11 @@ const FilteredItems = () => {
 
   return (
     <main>
-      <header>
+      <header className='header_container'>
         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search...'/>
-        <p>Showing {filteredItems.length} items</p>
+        <h3>Showing {filteredItems.length} items</h3>
       </header>
-      <section>
+      <section className='items_container'>
         {filteredItems.map((item) => {
           return (
             <ListItem key={item.id} onSelect={handleSelect} isSelected={selectedId === item.id} item={item}/>

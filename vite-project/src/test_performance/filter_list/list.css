@@ -4,3 +4,75 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: rgb(28, 28, 28);
+  --surface: rgb(38, 38, 38);
+  --surface-2: rgb(50, 50, 50);
+  --green: rgb(0, 180, 80);
+  --green-dark: rgb(0, 127, 0);
+  --green-dim: rgba(0, 180, 80, 0.1);
+  --text: rgb(230, 230, 230);
+  --text-muted: rgb(140, 140, 140);
+  --border: rgba(255, 255, 255, 0.07);
+  --radius: 8px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list_item {
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  width: 350px;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.list_item button {
+  background-color: var(--green-dark);
+  padding: 5px;
+  width: 60px;
+  border: none;
+  border-radius: 3px;
+  color: var(--text);
+  transition: 0.4s all;
+}
+
+.list_item button:hover {
+  background-color: var(--text);
+  color: var(--green-dark);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.items_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  column-gap: 50px;
+}
+
+.header_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.header_container input {
+  padding: 3px;
+  width: 250px;
+  border: none;
+  border-radius: 4px;
+}
