@@ -1,3 +1,4 @@
+import './dashboard.css'
 import React from "react"
 import { useEffect, useState } from "react"
 
@@ -14,7 +15,7 @@ const Clock = React.memo(() => {
 
   console.log('Rendering clock')
   return (
-    <div>
+    <div className='element_container clock'>
       <h2>{time}</h2>
     </div>
   )

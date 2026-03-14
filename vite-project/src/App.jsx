@@ -1,8 +1,7 @@
-import Dashboard from "./test_performance/dashboard/Dashboard"
-
+import FilteredItems from "./test_performance/filter_list/FilteredItems"
 function App() {
   return (
-    <Dashboard/>
+    <FilteredItems/>
   )
 }
 

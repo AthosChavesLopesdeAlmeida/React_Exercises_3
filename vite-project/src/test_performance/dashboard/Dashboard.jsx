@@ -1,3 +1,4 @@
+import './dashboard.css'
 import Card from './Card'
 import Clock from './Clock'
 import Counter from './Counter'
@@ -7,12 +8,12 @@ const Dashboard = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <main>
-      <section>
+    <main className='all_container'>
+      <section className='data_container'>
         <Card name={'Name'} email={'email@gmail.com'}/>
         <Counter count={count} onIncrement={() => setCount(count + 1)}/>
       </section>
-      <section>
+      <section className='data_container'>
         <Clock/>
       </section>
     </main>
