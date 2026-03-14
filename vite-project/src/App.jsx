@@ -1,8 +1,8 @@
-import DataTable from "./data_table_exercise/DataTable"
+import BasicHookForm from "./test_forms/BasicHookForm"
 
 function App() {
   return (
-    <DataTable/>
+    <BasicHookForm/>
   )
 }
 
