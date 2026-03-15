@@ -1,8 +1,7 @@
-import CEPFetch from "./test_forms/cep_fetch/CEPFetch"
-
+import MultiStepForm from './multi_step_exercise/MultiStepForm'
 function App() {
   return (
-    <CEPFetch/>
+    <MultiStepForm/>
   )
 }
 
