@@ -1,8 +1,8 @@
-import BasicHookForm from "./test_forms/BasicHookForm"
+import CEPFetch from "./test_forms/cep_fetch/CEPFetch"
 
 function App() {
   return (
-    <BasicHookForm/>
+    <CEPFetch/>
   )
 }
 
